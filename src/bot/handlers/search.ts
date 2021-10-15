@@ -12,7 +12,7 @@ const composer = new Composer();
 
 export default composer;
 
-composer.command(["search", "find"], async ctx => {
+composer.command(["play", "find"], async ctx => {
     if (searches.has(ctx.chat.id)) {
         await ctx.reply(i18n("search_active"));
         return;
@@ -62,7 +62,7 @@ composer.command(["search", "find"], async ctx => {
     searches.set(ctx.chat.id, { results, message });
 });
 
-composer.command("cancel", async ctx => {
+composer.command("cancelar", async ctx => {
     const search = searches.get(ctx.chat.id);
 
     if (search) {
