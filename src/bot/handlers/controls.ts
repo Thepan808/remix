@@ -18,7 +18,7 @@ composer.command("pause", ctx => {
     }
 });
 
-composer.command(["resume", "re", "res", "continue"], ctx => {
+composer.command(["resumir", "re", "res", "continue"], ctx => {
     switch (gramtgcalls(ctx.chat.id).resumeAudio()) {
         case true:
             return ctx.reply(i18n("resumed"));
